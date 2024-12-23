@@ -154,3 +154,86 @@ Example:
     "error": "Internal Server Error"
   }
   ```
+
+# User Profile Endpoint
+
+## GET /users/profile
+
+### Description
+This endpoint allows an authenticated user to retrieve their profile information.
+
+### Headers
+- `Authorization` (string, required): The JWT token for authentication.
+
+### Responses
+
+#### Success
+- **Status Code**: `200 OK`
+- **Body**:
+  ```json
+  {
+    "_id": "user_id",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com"
+  }
+  ```
+
+#### Authentication Errors
+- **Status Code**: `401 Unauthorized`
+- **Body**:
+  ```json
+  {
+    "message": "Authentication required"
+  }
+  ```
+
+#### Server Errors
+- **Status Code**: `500 Internal Server Error`
+- **Body**:
+  ```json
+  {
+    "error": "Internal Server Error"
+  }
+  ```
+
+# User Logout Endpoint
+
+## GET /users/logout
+
+### Description
+This endpoint allows an authenticated user to log out.
+
+### Headers
+- `Authorization` (string, required): The JWT token for authentication.
+
+### Responses
+
+#### Success
+- **Status Code**: `200 OK`
+- **Body**:
+  ```json
+  {
+    "message": "Logged out successfully"
+  }
+  ```
+
+#### Authentication Errors
+- **Status Code**: `401 Unauthorized`
+- **Body**:
+  ```json
+  {
+    "message": "Authentication required"
+  }
+  ```
+
+#### Server Errors
+- **Status Code**: `500 Internal Server Error`
+- **Body**:
+  ```json
+  {
+    "error": "Internal Server Error"
+  }
+  ```
