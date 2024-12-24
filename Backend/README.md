@@ -262,16 +262,16 @@ Example:
 ```json
 {
   "fullname": {
-    "firstname": "John",
-    "lastname": "Doe"
+    "firstname": "John", // must be at least 3 characters long
+    "lastname": "Doe" // optional, must be at least 3 characters long if provided
   },
-  "email": "john.doe@example.com",
-  "password": "password123",
+  "email": "john.doe@example.com", // must be a valid email format
+  "password": "password123", // must be at least 6 characters long
   "vehicle": {
-    "color": "red",
-    "plate": "ABC123",
-    "capacity": 4,
-    "vehicleType": "car"
+    "color": "red", // must be at least 3 characters long
+    "plate": "ABC123", // must be at least 3 characters long
+    "capacity": 4, // must be a number
+    "vehicleType": "car" // must be one of "car", "motorcycle", or "auto"
   }
 }
 ```
