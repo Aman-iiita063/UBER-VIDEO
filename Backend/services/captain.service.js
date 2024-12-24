@@ -10,12 +10,20 @@ module.exports.createCaptain = async ({
   capacity,
   vehicleType,
 }) => {
-  if (!firstname || !email || !password || !color || !plate || !capacity) {
+  if (
+    !firstname ||
+    !email ||
+    !password ||
+    !color ||
+    !plate ||
+    !capacity ||
+    !vehicleType
+  ) {
     throw new Error("All fields are required");
   }
-  //   const hashedPassword = await captainModel.hashPassword(password);
 
-  const captain = captainModel.create({
+  // Create a new captain instance
+  const captain = await captainModel.create({
     fullname: {
       firstname,
       lastname,
@@ -30,6 +38,7 @@ module.exports.createCaptain = async ({
     },
   });
 
-  const token = captain.generateAuthToken();
-  return { token, captain };
+  // Ensure generateAuthToken is defined in the schema
+  // const token = captain.generateAuthToken();
+  return captain;
 };
